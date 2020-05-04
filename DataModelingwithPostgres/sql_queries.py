@@ -53,7 +53,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s)
 
 song_select = ("""
 SELECT t1.song_id,t1.artist_id from dim_songs t1  join dim_artist t2 on t2.artist_id=t1.artist_id
-where t1.title = %s and t2.name= %s and t1.duration = %s
+where t1.title LIKE %s and t2.name LIKE %s and t1.duration = %s
 """)
 
 # QUERY LISTS

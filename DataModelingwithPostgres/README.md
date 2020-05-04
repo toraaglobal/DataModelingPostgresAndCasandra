@@ -1,3 +1,9 @@
+---
+noteId: "84d34fb08da611eaa4900582aa66a9b6"
+tags: []
+
+---
+
 # Data Modeling with Postgres
 ### Project Description
 A startup called Sparkily wants to analyze the data they have been collecting on songs and user activity on their music streaming app. The analytics team is particularly interested in understanding what songs user are listening to.Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
