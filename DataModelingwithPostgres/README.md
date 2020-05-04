@@ -33,7 +33,7 @@ log_data/2018/11/2018-11-13-events.json
 ```
 
 ### Schema for the Song Play Analysis
-![Schema]('./songplayschema.jpg')
+![Schema](https://github.com/toraaglobal/DataModelingPostgresAndCasandra/blob/master/songplayschema.jpg)
 
 ### Example Query
 ```
