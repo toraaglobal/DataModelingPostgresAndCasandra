@@ -39,6 +39,10 @@ python create_tables.py
 
 Run the `etl` script to migrate the data from the file system to populate the database
 
+```
+python etl.py
+```
+
 ### Schema of the table created in the posgres database
 ![Schema](https://github.com/toraaglobal/DataModelingPostgresAndCasandra/blob/master/songplayschema.jpg)
 
