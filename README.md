@@ -43,9 +43,9 @@ Run the `etl` script to migrate the data from the file system to populate the da
 ![Schema](https://github.com/toraaglobal/DataModelingPostgresAndCasandra/blob/master/songplayschema.jpg)
 
 ### Purpose of the database
-```
 The database can now be use by the analytics team to understand the users listening to certain music at a particular time.
-Example query is shown below.
+Example query is shown below:
+```
 SELECT t1.user_agent,t2.firstname, t2.last_name, t3.title, t3.duration,t4.name as artist_name
 from songplays t1 join users t2 on t1.user_id=t2.user_id
 join songs t3 on t3.song_id = t1.song_id
