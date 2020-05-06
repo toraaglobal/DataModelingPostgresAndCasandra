@@ -1,15 +1,10 @@
 # Data Modeling with Postgres
 ### Project Description
-A startup called Sparkily wants to analyze the data they have been collecting on songs and user activity on their music streaming app. The analytics team is particularly interested in understanding what songs user are listening to.Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
+This project create a database for Sparkily in postgres.Sparkily wants to analyze the data they have been collecting on songs and user activity on their music streaming app.
+The analytics team is particularly interested in understanding what songs user are listening to.Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
-### Project Delivrables
-A dimensional model using star schema will be design and implemented with postgresSQL.
-The database model will be optimized  for query performance, Sparkify company can perform ad hoc query to answer different business question.
-Develop ETL pipeline to load the data into the target database from the file systems and logs using `python` and `sql`
-it has to be no-violatile, integrated and time variant.
-
-### Source Data
-Sparkily has two different source of data:
+### Datasets
+Sparkily has two different source of data that is integrated as described below:
 1. Song dataset :  Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
 ```
 song_data/A/B/C/TRABCEI128F424C983.json
@@ -32,11 +27,25 @@ log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
 
-### Schema for the Song Play Analysis
+### Initial Setup
+Clone the repo using the commad `git clone https://github.com/toraaglobal/DataModelingPostgresAndCasandra.git` 
+
+Navigate to the project root directory `cd DataModelingPostgresAndCasandra/DataModelingwithPostgres`
+
+Run the `create_tables.py` to initialize the database and create all the tables using the command below:
+```
+python create_tables.py
+```
+
+Run the `etl` script to migrate the data from the file system to populate the database
+
+### Schema of the table created in the posgres database
 ![Schema](https://github.com/toraaglobal/DataModelingPostgresAndCasandra/blob/master/songplayschema.jpg)
 
-### Example Query
+### Purpose of the database
 ```
+The database can now be use by the analytics team to understand the users listening to certain music at a particular time.
+Example query is shown below.
 SELECT t1.user_agent,t2.firstname, t2.last_name, t3.title, t3.duration,t4.name as artist_name
 from songplays t1 join users t2 on t1.user_id=t2.user_id
 join songs t3 on t3.song_id = t1.song_id
